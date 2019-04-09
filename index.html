@@ -31,6 +31,8 @@
                 <input type="text" id="sportSearch" class="form-control">
                
               </div>
+              <!-- This is crucial in inputting sports related gifs into our webpage -->
+              <button type="submit" class="btn btn-success btn-lg">Submit</button>
             </form>
           </div>
         </div>
@@ -42,6 +44,93 @@
         var topics = [""]
         //we first want to make the container reactive to the click event
         document.querySelector("#container").addEventListener("click" , function() {
+
+          if(window.fetch) {
+            fetch(queryURL, {
+              method: "GET"
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          }
+          //This is in case the browser does not support the fetch method
+          else {
+            //This is to create a new xhr object
+            const xhr = new XMLHttpRequest();
+            //Setting up a "GET" request to the queryURL
+            xhr.open("GET", queryURL);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          }
             
         })
         
