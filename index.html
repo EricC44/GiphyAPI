@@ -12,12 +12,12 @@
   <body>
       <div id="container">
           <div class="row">
-            <button data-sports="Baseball">Homerun!</button>
-            <button data-sports="FootBall">Touchdown!</button>
-            <button data-sports="BasketBall">Buzzer Beater!</button>
-            <button data-sports="Hockey">Goal!</button>
-            <button data-sports="Golf">Hole in One!</button>
-            <button data-sports="Soccer">GOOOOOOOAL!</button>
+            <button type="button" class= "btn btn-info btn-lg" data-sports="Baseball">Homerun!</button>
+            <button type="button" class= "btn btn-info btn-lg" data-sports="FootBall">Touchdown!</button>
+            <button type="button" class= "btn btn-info btn-lg" data-sports="BasketBall">Buzzer Beater!</button>
+            <button type="button" class= "btn btn-info btn-lg" data-sports="Hockey">Goal!</button>
+            <button type="button" class= "btn btn-info btn-lg" data-sports="Golf">Hole in One!</button>
+            <button type="button" class= "btn btn-info btn-lg" data-sports="Soccer">GOOOOOOOAL!</button>
           </div>
         <div class="row">
           <div class="col-md-8">
@@ -25,13 +25,13 @@
           </div>
 
           <div class="col">
-            <div class="form-group">
+            <form class="form-inline" id="GiphySearch">
               <div class="form-group">
-                <div class="form-group">
-                  b4
-                </div>
+                <label for="SearchBar">Sports Search</label>
+                <input type="text" id="sportSearch" class="form-control">
+               
               </div>
-            </div>
+            </form>
           </div>
         </div>
       
