@@ -43,9 +43,13 @@
         //Some global variables before we start coding
         var topics = [""]
         //we first want to make the container reactive to the click event
-        document.querySelector("#container").addEventListener("click" , function() {
+        document.querySelector("#container").addEventListener("click" , function(event) {
 
           if(window.fetch) {
+            //storing the value of dataset sports in the button
+            if(event.target.tagName == "BUTTON") {
+              var sport = event.target.dataset.sports
+            }
             fetch(queryURL, {
               method: "GET"
             });
