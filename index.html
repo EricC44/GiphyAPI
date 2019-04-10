@@ -44,15 +44,62 @@
         var topics = [""]
         //we first want to make the container reactive to the click event
         document.querySelector("#container").addEventListener("click" , function(event) {
-
+          //We are seeing if the browser can support fetch command.
           if(window.fetch) {
             //storing the value of dataset sports in the button
             if(event.target.tagName == "BUTTON") {
               var sport = event.target.dataset.sports
-            }
+              //This is a var to get the api itself and sending it parameters on what to pull.
+              var queryURL = `https://api.giphy.com/v1/gifs/search?q="${sport}&api_key=LSLq3tnjyYxCRRP5WmWRntKPPOXEYSlW&limit=10`;
+             //This is to request information from the queryURL server
             fetch(queryURL, {
               method: "GET"
             });
+              //This is the data that should come back to me
+              then(function(response) {return response.json() })
+              .then(function (response) {
+
+                console.log(queryURL);
+
+                console.log(response);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              });
 
 
 
@@ -82,7 +129,7 @@
 
 
 
-
+            }
 
 
 
