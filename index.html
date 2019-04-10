@@ -55,13 +55,20 @@
             fetch(queryURL, {
               method: "GET"
             });
-              //This is the data that should come back to me
+              //This is the AJAX data that should come back to me
               then(function(response) {return response.json() })
               .then(function (response) {
 
                 console.log(queryURL);
 
                 console.log(response);
+                //Setting the AJAX data returned to "result"
+                var result = response.data;
+
+                for(let pic of result) {
+
+                  var sportsDiv = document.createElement("div");
+                }
 
 
 
