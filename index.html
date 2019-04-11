@@ -81,6 +81,13 @@
                     //this creates a "p" tag and are creating text for that p value
                     var p = document.createElement("p");
                     p.innerText = `Rating: ${rating}`;
+                    //Creating the image tag
+                    var sportsImage = document.createElement("img");
+                    //Giving each of the images a "src" tag and setting each image to a default height
+                    sportsImage.setAttribute("src" , item.images.fixed_height.url);
+                    //Apending the paragraph and image tags to our sports div
+                    sportsDiv.appendChild(p);
+                    sportsDiv.appendChild(sportsImage);
                     
                   }
 
