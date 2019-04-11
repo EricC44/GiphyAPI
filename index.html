@@ -54,9 +54,11 @@
              //This is to request information from the queryURL server
             fetch(queryURL, {
               method: "GET"
-            });
+            })
               //This is the AJAX data that should come back to me
-              then(function(response) {return response.json() })
+              .then(function(response) {
+                return response.json(); 
+              })
               .then(function (response) {
 
                 console.log(queryURL);
@@ -64,15 +66,23 @@
                 console.log(response);
                 //Setting the AJAX data returned to "result"
                 var result = response.data;
-
+                //Looping function for every result
                 for(let pic of result) {
+                  
+                  
+                  //Making sure that images with a pg-13 or r rated tag will be removed
+                  if(item.rating !== "r" && item.rating !== "pg-13") {
+                    
+                    //Creating a div to fit our gifs
+                    var sportsDiv = document.createElement("div");
+                    //Storing the rating of the gif
+                    var rating = item.rating;
 
-                  var sportsDiv = document.createElement("div");
-
-
-                  var p = document.createElement("p")
-                   
-
+                    //this creates a "p" tag and are creating text for that p value
+                    var p = document.createElement("p");
+                    p.innerText = `Rating: ${rating}`;
+                    
+                  }
 
                 }
 
