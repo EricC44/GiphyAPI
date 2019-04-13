@@ -83,8 +83,15 @@
                     p.innerText = `Rating: ${rating}`;
                     //Creating the image tag
                     var sportsImage = document.createElement("img");
-                    //Giving each of the images a "src" tag and setting each image to a default height
-                    sportsImage.setAttribute("src" , pic.images.fixed_height.url);
+                    //Giving each of the im
+                    sportsImage.setAttribute("src" , pic.images.original_still.url);
+                    sportsImage.setAttribute("data-still" , pic.images.original_still.url);
+                    sportsImage.setAttribute("data-animate" , pic.images.original.url);
+                    sportsImage.setAttribute("data-state" , "still");
+                    sportsImage.setAttribute("class" , "gif");
+                      
+                    
+                    
                     //Apending the paragraph and image tags to our sports div
                     sportsDiv.appendChild(p);
                     sportsDiv.appendChild(sportsImage);
@@ -97,22 +104,21 @@
                   document.querySelector("#gifs").addEventListener("click", function(event) {
                     if(event.target.tagName === "img".toUpperCase()) {
 
-                      let sportsImage = event.target;
-
-                      var state = sportsImage.dataset.state;
-
-                      var stillURL = result.images.fixed_height_still.url;
-                      var playURL = result.images.fixed_height_height.url;
-
+                      //let sportsImage = event.target;
+                      var state = event.target
+                      
+                      //document.getElementById("gifs").setAttribute("data-state")
+                      
+                      //this is supposedly trying to pause and play gifs but it isnt doing anything yet
                       if(state === "still") {
-
-                        sportsImage.setAttribute("src" , sportsImage.dataset.playURL);
+                        
+                        sportsImage.setAttribute("src" , pic.images.original.url);
                         sportsImage.setAttribute("data-state" , "animate")
                       }
 
                       else {
-                      
-                        sportsImage.setAttribute("src" , sportsImage.dataset.stillURL);
+                        
+                        sportsImage.setAttribute("src" , pic.images.original_still.url);
                         sportsImage.setAttribute("data-state" , "still");
                       }
 
