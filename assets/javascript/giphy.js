@@ -51,7 +51,8 @@ document.querySelector("#container").addEventListener("click" , function(event) 
             //this creates a "p" tag and are creating text for that p value
             var p = document.createElement("p");
             p.innerText = `Rating: ${rating}`;
-            
+            var animated = result[i].images.original.url;
+            var still = result[i].images.original_still.url;
             //Creating the image tag
             var sportsImage = document.createElement("img");
             //Giving each of the im
@@ -62,12 +63,12 @@ document.querySelector("#container").addEventListener("click" , function(event) 
               //"data-state": "still",
               //"class": "gif"
             
-            sportsImage.setAttribute("src" , result[i].images.original_still.url);
-            sportsImage.setAttribute("data-still" , result[i].images.original_still.url);
-            sportsImage.setAttribute("data-animate" , result[i].images.original.url);
+            sportsImage.setAttribute("src" , still);
+            sportsImage.setAttribute("data-still" , still);
+            sportsImage.setAttribute("data-animate" , animated);
             sportsImage.setAttribute("data-state" , "still");
             sportsImage.setAttribute("data-state" , "animate");
-            sportsImage.setAttribute("class" , "gif");
+            sportsImage.classList.add("sports-image");
             
               
             
@@ -97,7 +98,7 @@ document.querySelector("#container").addEventListener("click" , function(event) 
             //}
           //});
           //This is our event listener to 
-          document.querySelector("#gifs").addEventListener("click", function(event) {
+          document.querySelector("#gifs").addEventListener("click", ".sports-image" , function(event) {
             if(event.target.tagName === "img".toUpperCase()) {
               console.log("TagName" , event.target.tagName);
               let currentImg = event.target;
@@ -127,6 +128,8 @@ document.querySelector("#container").addEventListener("click" , function(event) 
           });
 
         }
+
+        //Check with lines 79 and 101
 
 
 
