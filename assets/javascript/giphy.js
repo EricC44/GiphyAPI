@@ -2,7 +2,7 @@
 var topics = ["Baseball" , "Football" , "BasketBall" , "Hockey" , "Golf" , "Soccer"];
 //we first want to make the container reactive to the click event
 document.querySelector("#container").addEventListener("click" , function(event) {
-
+  //Out of time could not complete the add a button feature
   let exist = false;
 
   //if(topics.indexOf(("sportSearch").value.trim()) !== -1) {
@@ -55,7 +55,7 @@ document.querySelector("#container").addEventListener("click" , function(event) 
             var still = result[i].images.original_still.url;
             //Creating the image tag
             var sportsImage = document.createElement("img");
-            //Giving each of the im
+            //Giving each of the images specific tags for the play and pause.
             //sportsImage.setAttribute({
               //"src": response.images.original_still.url,
               //"data-still": response.images.original_still.url,
@@ -68,7 +68,8 @@ document.querySelector("#container").addEventListener("click" , function(event) 
             sportsImage.setAttribute("data-animate" , animated);
             sportsImage.setAttribute("data-state" , "still");
             sportsImage.setAttribute("data-state" , "animate");
-            sportsImage.classList.add("sports-image");
+            //sportsImage.classList.add("pause");
+            sportsImage.setAttribute("class" , "gif");
             
               
             
@@ -98,16 +99,17 @@ document.querySelector("#container").addEventListener("click" , function(event) 
             //}
           //});
           //This is our event listener to 
-          document.querySelector("#gifs").addEventListener("click", ".sports-image" , function(event) {
-            if(event.target.tagName === "img".toUpperCase()) {
+          document.getElementById("gifs").addEventListener("click",  function(event) {
+            if(event.target.tagName == "img".toUpperCase()) {
               console.log("TagName" , event.target.tagName);
               let currentImg = event.target;
               console.log(currentImg);
               var state = currentImg.dataset.state
               console.log(state);
+              
               //document.getElementById("gifs").setAttribute("data-state")
               
-              //this is supposedly trying to pause and play gifs but it isnt doing anything yet
+              //this will play the gif but will not pause it :(
               if(state === "still") {
                 console.log("stateBefore" , state);
                 
@@ -121,6 +123,7 @@ document.querySelector("#container").addEventListener("click" , function(event) 
                 //var newSports = sportsImage.setAttribute("data-still" , sportsImage);
                 currentImg.setAttribute("src" , currentImg.dataset.still);
                 currentImg.setAttribute("data-state" , "still");
+                console.log("finalState" , state);
               }
 
           }
@@ -129,7 +132,7 @@ document.querySelector("#container").addEventListener("click" , function(event) 
 
         }
 
-        //Check with lines 79 and 101
+        
 
 
 
